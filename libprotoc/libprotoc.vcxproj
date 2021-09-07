@@ -21,9 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4de8a662-56c0-46e3-b036-dddb5fdbdfd0}</ProjectGuid>
-    <RootNamespace>libprotobuf</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <ProjectGuid>{48e390ae-9344-4dd6-a68a-ff7152b64ab1}</ProjectGuid>
+    <RootNamespace>libprotoc</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -103,15 +103,15 @@
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <SDLCheck>
       </SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;LIBPROTOBUF_EXPORTS;_USERDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>Default</ConformanceMode>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_USERDLL;LIBPROTOBUF_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
       <AdditionalOptions>/wd4244 /wd4267 /wd4018 /wd4355 /wd4800 /wd4251 /wd4996 /wd4146 /wd4305 /D _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS %(AdditionalOptions)</AdditionalOptions>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,74 +149,75 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\protobuf_2.4.1\config.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\importer.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\parser.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\descriptor.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\descriptor.pb.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\descriptor_database.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\dynamic_message.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\extension_set.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\generated_message_reflection.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\generated_message_util.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\io\coded_stream.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\io\coded_stream_inl.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\io\gzip_stream.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\io\printer.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\io\tokenizer.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\io\zero_copy_stream.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\io\zero_copy_stream_impl.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\io\zero_copy_stream_impl_lite.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\message.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\message_lite.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\reflection_ops.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\repeated_field.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\service.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\stubs\common.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\stubs\hash.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\stubs\map-util.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\stubs\once.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\stubs\stl_util-inl.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\stubs\strutil.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\stubs\substitute.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\text_format.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\unknown_field_set.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\wire_format.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\wire_format_lite.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\wire_format_lite_inl.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\code_generator.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\command_line_interface.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_enum.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_enum_field.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_extension.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_field.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_file.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_generator.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_helpers.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_message.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_message_field.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_primitive_field.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_service.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_string_field.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_enum.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_enum_field.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_extension.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_field.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_file.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_generator.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_helpers.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_message.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_message_field.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_primitive_field.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_service.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_string_field.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\plugin.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\plugin.pb.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\python\python_generator.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\subprocess.h" />
+    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\compiler\zip_writer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\importer.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\parser.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\descriptor.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\descriptor.pb.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\descriptor_database.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\dynamic_message.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\extension_set.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\extension_set_heavy.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\generated_message_reflection.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\generated_message_util.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\io\coded_stream.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\io\gzip_stream.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\io\printer.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\io\tokenizer.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\io\zero_copy_stream.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\io\zero_copy_stream_impl.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\io\zero_copy_stream_impl_lite.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\message.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\message_lite.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\reflection_ops.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\repeated_field.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\service.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\stubs\common.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\stubs\once.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\stubs\structurally_valid.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\stubs\strutil.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\stubs\substitute.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\text_format.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\unknown_field_set.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\wire_format.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\wire_format_lite.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\code_generator.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\command_line_interface.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_enum.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_enum_field.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_extension.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_field.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_file.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_generator.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_helpers.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_message.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_message_field.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_primitive_field.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_service.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\cpp\cpp_string_field.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_enum.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_enum_field.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_extension.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_field.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_file.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_generator.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_helpers.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_message.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_message_field.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_primitive_field.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_service.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\java\java_string_field.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\plugin.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\plugin.pb.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\python\python_generator.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\subprocess.cc" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\zip_writer.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libprotobuf\libprotobuf.vcxproj">
+      <Project>{4de8a662-56c0-46e3-b036-dddb5fdbdfd0}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

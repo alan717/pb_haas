@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{748b4a02-5490-4adb-826c-c9102a4d6903}</ProjectGuid>
-    <RootNamespace>libprotobuflite</RootNamespace>
+    <ProjectGuid>{4ba9546c-0c98-4d51-acee-eabe8724d154}</ProjectGuid>
+    <RootNamespace>protoc</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -33,7 +33,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -98,12 +98,20 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <SDLCheck>
+      </SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalOptions>/D _CRT_SECURE_NO_WARNINGS /D _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS  /wd4244 /wd4267 /wd4018 /wd4355 /wd4800 /wd4251 /wd4996 /wd4146 /wd4305 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalOptions>/wd4244 /wd4267 /wd4018 /wd4355 /wd4800 /wd4251 /wd4996 /wd4146 /wd4305 /D _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,34 +149,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\protobuf_2.4.1\config.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\extension_set.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\generated_message_util.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\io\coded_stream.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\io\coded_stream_inl.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\io\zero_copy_stream.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\io\zero_copy_stream_impl_lite.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\message_lite.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\repeated_field.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\stubs\common.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\stubs\hash.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\stubs\map-util.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\stubs\once.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\stubs\stl_util-inl.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\wire_format_lite.h" />
-    <ClInclude Include="..\protobuf_2.4.1\src\google\protobuf\wire_format_lite_inl.h" />
+    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\compiler\main.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\extension_set.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\generated_message_util.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\io\coded_stream.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\io\zero_copy_stream.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\io\zero_copy_stream_impl_lite.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\message_lite.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\repeated_field.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\stubs\common.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\stubs\once.cc" />
-    <ClCompile Include="..\protobuf_2.4.1\src\google\protobuf\wire_format_lite.cc" />
+    <ProjectReference Include="..\libprotobuf\libprotobuf.vcxproj">
+      <Project>{4de8a662-56c0-46e3-b036-dddb5fdbdfd0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\libprotoc\libprotoc.vcxproj">
+      <Project>{48e390ae-9344-4dd6-a68a-ff7152b64ab1}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
