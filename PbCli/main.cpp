@@ -7,13 +7,13 @@ int main() {
 
 	Person MSG;
 
-	MSG.set_id(00);
+	MSG.set_id(01);
 	MSG.set_name("duan");
 
-	int sz=MSG.ByteSize();
-	void* bf=malloc(sz);
+	int sz = MSG.ByteSize();
+	void* bf = malloc(sz);
 	std::string ss = MSG.SerializeAsString();
-	MSG.Serial
+	//MSG.Serial
 	//MSG.Serialize
 
 
