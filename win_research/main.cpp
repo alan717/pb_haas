@@ -1,11 +1,17 @@
 
 
 
-#include<Windows.h>
+#include <Windows.h>
 #include <iostream>
 
 
 int main() {
+
+	
+	return 0;
+}
+
+void spt() {
 
 	int rtCode = MessageBox(NULL,
 		(LPCWSTR)L"内存地址越界,程序已经被终止!",
@@ -22,12 +28,5 @@ int main() {
 	default:
 		std::cout << "其他操作!" << std::endl;
 	}
-
-	return 0;
-}
-
-void spt() {
-
-
 
 }
