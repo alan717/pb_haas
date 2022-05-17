@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LitePbCli", "LitePbCli\Lite
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QQSign", "QQSign\QQSign.vcxproj", "{A0D34485-B354-45CE-A472-1A62F4AE8731}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "staticLib", "staticLib\staticLib.vcxproj", "{8EA46530-7ACD-4243-AF24-F7CF338C4C3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{A0D34485-B354-45CE-A472-1A62F4AE8731}.Release|x64.Build.0 = Release|x64
 		{A0D34485-B354-45CE-A472-1A62F4AE8731}.Release|x86.ActiveCfg = Release|Win32
 		{A0D34485-B354-45CE-A472-1A62F4AE8731}.Release|x86.Build.0 = Release|Win32
+		{8EA46530-7ACD-4243-AF24-F7CF338C4C3E}.Debug|x64.ActiveCfg = Debug|x64
+		{8EA46530-7ACD-4243-AF24-F7CF338C4C3E}.Debug|x64.Build.0 = Debug|x64
+		{8EA46530-7ACD-4243-AF24-F7CF338C4C3E}.Debug|x86.ActiveCfg = Debug|Win32
+		{8EA46530-7ACD-4243-AF24-F7CF338C4C3E}.Debug|x86.Build.0 = Debug|Win32
+		{8EA46530-7ACD-4243-AF24-F7CF338C4C3E}.Release|x64.ActiveCfg = Release|x64
+		{8EA46530-7ACD-4243-AF24-F7CF338C4C3E}.Release|x64.Build.0 = Release|x64
+		{8EA46530-7ACD-4243-AF24-F7CF338C4C3E}.Release|x86.ActiveCfg = Release|Win32
+		{8EA46530-7ACD-4243-AF24-F7CF338C4C3E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
