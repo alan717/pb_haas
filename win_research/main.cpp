@@ -3,10 +3,11 @@
 
 #include <Windows.h>
 #include <iostream>
-
+#include"Cryptor.h"
 
 int main() {
-
+	Cryptor cty;
+	cty.setKey();
 	
 	return 0;
 }
